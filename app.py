@@ -7,7 +7,7 @@ from PIL import Image
 
 # Load and preprocess the image
 def model_predict(image_path):
-    model = tf.keras.models.load_model(r"C:\Users\hp\Desktop\Projects\Plant-disease-detection-systemCNN_plantdiseases_model.keras")
+    model = tf.keras.models.load_model(r"C:\Users\hp\Desktop\Projects\Plant-disease-detection-system/CNN_plantdiseases_model.keras")
     img = cv2.imread(image_path)  # read the file and convert into array
     H, W, C = 224, 224, 3
     img = cv2.resize(img, (H, W)) 
@@ -24,7 +24,7 @@ st.sidebar.title("Plant Disease Detection System for Sustainable Agriculture")
 app_mode = st.sidebar.selectbox("Select Page", ["HOME", "DISEASE RECOGNITION"])
 
 # Display image using streamlit
-img = Image.open(r"C:\Users\Lenovo\Downloads\Diseases.png")
+img = Image.open(r"C:\Users\hp\Downloads\Diseases.png")
 st.image(img)
 
 # Main Page
