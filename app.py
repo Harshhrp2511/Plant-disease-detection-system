@@ -14,10 +14,10 @@ UPLOAD_FOLDER = 'static/uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # Class labels
-classes = ['Pepper__bell___Bacterial_spot', 'Pepper__bell___healthy', 'Potato___Early_blight', 'Potato___healthy',
-           'Potato___Late_blight', 'Tomato__Target_Spot', 'Tomato__Tomato_mosaic_virus', 'Tomato__Tomato_YellowLeaf__Curl_Virus',
-           'Tomato_Bacterial_spot', 'Tomato_Early_blight', 'Tomato_healthy', 'Tomato_Late_blight', 'Tomato_Leaf_Mold',
-           'Tomato_Septoria_leaf_spot', 'Tomato_Spider_mites_Two_spotted_spider_mite']  # Replace with actual class names
+classes = ['Peppe bell: Bacterial spot', 'Peppe bell: healthy', 'Potato: Early blight', 'Potato: healthy',
+           'Potato: Late blight', 'Tomato: Target Spot', 'Tomato: Tomato mosaic virus', 'Tomato: Tomato YellowLeaf Curl Virus',
+           'Tomato: Bacterial spot', 'Tomato: Early blight', 'Tomato: healthy', 'Tomato: Late blight', 'Tomato: Leaf Mold',
+           'Tomato: Septoria leaf spot', 'Tomato: Spidermites Two spotted spider mite']  # Replace with actual class names
 
 @app.route('/')
 def index():

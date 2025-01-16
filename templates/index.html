@@ -7,10 +7,28 @@
     <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <h2>GreenGuard</h2> <!-- Logo of the website -->
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="#" class="dropdown-toggle">Menu</a>
+                    <div class="dropdown-content">
+                        <a href="#">About Project</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Container -->
     <div class="container">
         <h1>Plant Disease Detection</h1>
-        <form action="/predict" method="post" enctype="multipart/form-data">
-            <input type="file" name="file" required>
+        <form action="/predict" method="post" enctype="multipart/form-data" class="upload-form">
+            <label for="file-upload">Upload Image of Plant Leaf:</label>
+            <input type="file" name="file" id="file-upload" required>
             <button type="submit">Upload and Predict</button>
         </form>
     </div>
