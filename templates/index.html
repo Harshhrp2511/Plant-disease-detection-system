@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plant Disease Detection</title>
-    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet"  href="/static/css/styles.css">
 </head>
 <body>
     <!-- Navbar -->
@@ -17,20 +17,49 @@
                 <li><a href="#" class="dropdown-toggle">Menu</a>
                     <div class="dropdown-content">
                         <a href="#">About Project</a>
+                        <a href="#">Contact Us</a>
                     </div>
                 </li>
             </ul>
         </div>
     </nav>
 
+    <!-- Loading Spinner -->
+    <div id="loading" class="loading" style="display:none;">
+        <img src="loading.gif" alt="Loading..." />
+        <p>Processing...</p>
+    </div>
+
     <!-- Container -->
     <div class="container">
         <h1>Plant Disease Detection</h1>
-        <form action="/predict" method="post" enctype="multipart/form-data" class="upload-form">
+        <form action="/predict" method="post" enctype="multipart/form-data" class="upload-form" id="uploadForm">
             <label for="file-upload">Upload Image of Plant Leaf:</label>
-            <input type="file" name="file" id="file-upload" required>
+            <input type="file" name="file" id="file-upload" required onchange="previewImage(event)">
+            <img id="image-preview" src="" alt="Image Preview" style="display:none; margin-top: 20px;">
             <button type="submit">Upload and Predict</button>
         </form>
     </div>
+
+    <!-- Prediction Result Section -->
+    <div id="result" style="display:none;">
+        <h3>Prediction Result:</h3>
+        <p id="prediction-result"></p>
+        <p><strong>Suggested Treatment:</strong> <span id="suggestion"></span></p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2025 GreenGuard. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank">Facebook</a>
+                <a href="https://twitter.com" target="_blank">Twitter</a>
+                <a href="https://instagram.com" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="static/js/script.js"></script>
 </body>
 </html>

@@ -11,6 +11,10 @@
         <h1>Prediction Result</h1>
         <p><strong>Predicted Disease:</strong> {{ prediction }}</p>
         <img src="{{ image_path }}" alt="Uploaded Image">
+        <div id="result" style="display:none;">
+            <p id="prediction-result"></p>
+            <p><strong>Suggested Treatment:</strong> <span id="suggestion"></span></p>
+        </div>
         <a href="/">Go Back</a>
     </div>
 </body>
