@@ -76,7 +76,7 @@ body {
 }
 
 .navbar .menu ul li.open .dropdown-content {
-    display: block;
+    display: flex;
 }
 
 .navbar .menu ul li .dropdown-toggle {
