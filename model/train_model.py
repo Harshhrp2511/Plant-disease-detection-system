@@ -7,7 +7,7 @@ from sklearn.model_selection import train_test_split
 import numpy as np
 
 # Dataset Path
-dataset_path = r'C:\Users\hp\Downloads\archive(1).zip\PlantVillage'
+dataset_path = r'C:\Users\hp\Downloads\PlantVillage'
 
 
 # Image Preprocessing
