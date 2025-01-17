@@ -12,17 +12,6 @@
         <div class="logo">
             <h2>GreenGuard</h2> <!-- Logo of the website -->
         </div>
-        <div class="menu">
-            <ul>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">Menu</a>
-                    <div class="dropdown-content">
-                        <a href="/templates/about.html">About</a>
-                        <a href="#">Chat</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
     </nav>
 
     <!-- Container with project information -->
@@ -35,20 +24,14 @@
 
     <!-- Image Upload Section -->
     <div class="upload-container">
-        <h2>Upload Image for Diagnosis</h2>
-        <form action="/predict" method="post" enctype="multipart/form-data" id="uploadForm" class="upload-form">
+        <h2>Upload Image for Disease Detection</h2>
+        <form action="/predict" method="post" enctype="multipart/form-data" id="uploadForm" class="upload-form" onsubmit="handleFormSubmit(event)">
             <label for="file-upload">Choose an Image</label>
             <input type="file" name="file" id="file-upload" required onchange="previewImage(event)">
             <img id="image-preview" src="" alt="Image Preview" style="display:none; margin-top: 20px;">
             <button type="submit">Upload and Predict</button>
         </form>
     </div>
-
-    <!-- Loading Spinner -->
-    <div id="loading" class="loading" style="display:none;">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" alt="Loading..." />
-    </div>
-
     <script src="static/js/script.js"></script>
 </body>
 </html>

@@ -28,29 +28,11 @@ function previewImage(event) {
 
 // Function to handle form submission and show a loading spinner
 function handleFormSubmit(event) {
-    event.preventDefault(); // Prevent default form submission
-
     const loadingSpinner = document.getElementById("loading");
-    const resultSection = document.getElementById("result");
-    const predictionResult = document.getElementById("prediction-result");
-    const suggestionText = document.getElementById("suggestion");
 
-    if (loadingSpinner && resultSection && predictionResult && suggestionText) {
+    if (loadingSpinner) {
         // Show loading spinner
         loadingSpinner.style.display = "block";
-        resultSection.style.display = "none"; // Hide previous results, if any
-
-        // Simulate prediction process
-        setTimeout(function () {
-            loadingSpinner.style.display = "none"; // Hide spinner
-
-            // Display simulated prediction result
-            predictionResult.textContent = "Disease Detected: Blight";
-            suggestionText.textContent = "Apply fungicide and remove infected leaves.";
-            resultSection.style.display = "block";
-        }, 3000); // Simulated 3-second delay
-    } else {
-        console.error("Some elements are missing in the DOM.");
     }
 }
 
@@ -89,9 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (fileInput) {
-        fileInput.addEventListener("change", (event) => {
-            previewImage(event);
-        });
+        fileInput.addEventListener("change", previewImage);
     }
 
     // Initialize dropdown functionality
