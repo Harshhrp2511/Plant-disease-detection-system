@@ -1,19 +1,16 @@
 from flask import Flask, render_template, request, redirect, url_for
 import os
-from tensorflow.keras.models import load_model
-from tensorflow.keras.preprocessing.image import load_img, img_to_array
+from tensorflow.keras.models import load_model # type: ignore
+from tensorflow.keras.preprocessing.image import load_img, img_to_array # type: ignore
 import numpy as np
 
 app = Flask(__name__)
 
-# Load the trained model
 model = load_model('model/plant_disease_model.h5')
 
-# Upload folder
 UPLOAD_FOLDER = 'static/uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-# Class labels and remedies
 classes = [
     'Pepper bell: Bacterial spot', 'Pepper bell: Healthy', 'Potato: Early blight', 'Potato: Healthy',
     'Potato: Late blight', 'Tomato: Target Spot', 'Tomato: Tomato mosaic virus', 
@@ -57,12 +54,10 @@ def predict():
         filepath = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
         file.save(filepath)
         
-        # Preprocess image
         img = load_img(filepath, target_size=(128, 128))
         img = img_to_array(img) / 255.0
         img = np.expand_dims(img, axis=0)
         
-        # Prediction
         prediction = model.predict(img)
         predicted_class = classes[np.argmax(prediction)]
         remedy = remedies.get(predicted_class, "No remedy found for the detected disease.")
