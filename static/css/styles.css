@@ -1,4 +1,3 @@
-/* General Reset */
 body, h1, h2, h3, p {
     margin: 0;
     padding: 0;
@@ -6,90 +5,27 @@ body, h1, h2, h3, p {
 }
 
 body {
-    background-color: #f5f9f4; /* Light green background for the entire page */
+    background-color: #adf39c; 
 }
-
-/* Navbar Styles */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #2f4f2f;
+    background-color: #378137;
     padding: 10px 20px;
-    color: #fff;
+    color: #8bd684;
     font-size: 1.2em;
 }
 
 .navbar .logo h2 {
     margin: 0;
-    color: #fff;
+    color: #b1f1b7;
 }
-
-.navbar .menu ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-.navbar .menu ul li {
-    position: relative;
-    margin-left: 20px;
-}
-
-.navbar .menu ul li a {
-    text-decoration: none;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.navbar .menu ul li a:hover {
-    background-color: #3d6d3d;
-}
-
-.navbar .menu ul li .dropdown-content {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    display: none;
-    z-index: 1000;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    overflow: hidden;
-    min-width: 150px;
-}
-
-.navbar .menu ul li .dropdown-content a {
-    color: #2f4f2f;
-    padding: 10px;
-    display: block;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-
-.navbar .menu ul li .dropdown-content a:hover {
-    background-color: #f5f9f4;
-}
-
-.navbar .menu ul li.open .dropdown-content {
-    display: flex;
-}
-
-.navbar .menu ul li .dropdown-toggle {
-    cursor: pointer;
-    position: relative;
-}
-
-
 /* Container Styles */
 .container {
     text-align: center;
     padding: 50px 20px;
-    background-image: url('https://th.bing.com/th/id/OIP.4brevPowFmqGPWdgyu-5fQHaEo?rs=1&pid=ImgDetMain');
+    background-image: url('https://4kwallpapers.com/images/walls/thumbs_3t/1348.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -114,10 +50,10 @@ body {
 .upload-container {
     text-align: center;
     margin: 30px auto;
-    background-color: #f0f8f0;
+    background-color: #c6f3c2;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 10px rgba(8, 54, 15, 0.952);
     max-width: 600px;
 }
 
@@ -145,15 +81,4 @@ body {
 
 .upload-container button:hover {
     background-color: #3d6d3d;
-}
-
-/* Loading Spinner */
-.loading {
-    text-align: center;
-    margin: 20px auto;
-}
-
-.loading img {
-    width: 80px;
-    height: 80px;
 }
