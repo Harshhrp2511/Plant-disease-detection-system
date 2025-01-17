@@ -7,22 +7,17 @@
     <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body>
-    <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">
-            <h2>GreenGuard</h2> <!-- Logo of the website -->
+            <h2>LeafDetect</h2> 
         </div>
     </nav>
-
-    <!-- Container with project information -->
     <div class="container">
         <h1>Plant Disease Detection</h1>
         <p>Our platform helps you detect and diagnose plant diseases accurately by analyzing the image of plant leaves. 
            The system uses advanced machine learning models to identify diseases based on visual patterns. 
            Upload an image of a plant leaf to get instant disease predictions and treatment suggestions.</p>
     </div>
-
-    <!-- Image Upload Section -->
     <div class="upload-container">
         <h2>Upload Image for Disease Detection</h2>
         <form action="/predict" method="post" enctype="multipart/form-data" id="uploadForm" class="upload-form" onsubmit="handleFormSubmit(event)">
