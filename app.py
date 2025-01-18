@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 import os
-from tensorflow.keras.models import load_model  # Load the trained model
-from tensorflow.keras.preprocessing.image import load_img, img_to_array  # For image processing
+from tensorflow.keras.models import load_model  # type: ignore # Load the trained model
+from tensorflow.keras.preprocessing.image import load_img, img_to_array  # type: ignore # For image processing
 import numpy as np
 
 app = Flask(__name__)
