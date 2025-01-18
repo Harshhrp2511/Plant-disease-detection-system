@@ -1,10 +1,11 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash
 import os
-from tensorflow.keras.models import load_model  # type: ignore # Load the trained model
-from tensorflow.keras.preprocessing.image import load_img, img_to_array  # type: ignore # For image processing
+from tensorflow.keras.models import load_model  # type: ignore
+from tensorflow.keras.preprocessing.image import load_img, img_to_array  # type: ignore
 import numpy as np
 
 app = Flask(__name__)
+app.secret_key = 'your_secret_key'  # Required for flash messages
 
 # Load the pre-trained model
 model = load_model('model/plant_disease_model.h5')
@@ -50,11 +51,13 @@ def index():
 @app.route('/predict', methods=['POST'])
 def predict():
     if 'file' not in request.files:
-        return redirect(request.url)  # Redirect if no file is provided
+        flash("No file provided. Please upload an image.")
+        return redirect(request.url)
     
     file = request.files['file']
     if file.filename == '':
-        return redirect(request.url)  # Redirect if no file is selected
+        flash("No file selected. Please choose an image.")
+        return redirect(request.url)
 
     if file:
         # Save the uploaded file
@@ -68,9 +71,17 @@ def predict():
         
         # Make a prediction
         prediction = model.predict(img)
-        predicted_class = classes[np.argmax(prediction)]
-        remedy = remedies.get(predicted_class, "No remedy found for the detected disease.")
+        max_prob = np.max(prediction)
+        confidence_threshold = 0.7  # Set a high confidence threshold
         
+        if max_prob < confidence_threshold:
+            # If the confidence is below the threshold, treat it as irrelevant
+            predicted_class = "Unrecognized or irrelevant image."
+            remedy = "Please upload a clear image of a plant to get a proper diagnosis."
+        else:
+            predicted_class = classes[np.argmax(prediction)]
+            remedy = remedies.get(predicted_class, "No remedy found for the detected disease.")
+            
         # Render the result page with prediction and remedy
         return render_template('result.html', prediction=predicted_class, remedy=remedy, image_path=filepath)
 
