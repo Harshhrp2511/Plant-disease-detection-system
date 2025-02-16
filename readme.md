@@ -1,1 +1,1 @@
-Plant detection
+Plant detection using python and flask
