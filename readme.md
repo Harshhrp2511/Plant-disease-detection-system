@@ -12,6 +12,6 @@ The **Plant Disease Detection System** is a web-based application that helps far
 ## 🛠 Tech Stack
 - **Backend**: Flask (Python)
 - **Frontend**: HTML, CSS, JavaScript
-- **Machine Learning**: TensorFlow/Keras, OpenCV
+- **Machine Learning**: TensorFlow, Keras, OpenCV
 - **Database**: Plant Village Dataset (Kaggle)
 
