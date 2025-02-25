@@ -1,7 +1,7 @@
 # Plant Disease Detection System
 
 ## 📌 Overview
-The **Plant Disease Detection System** is a web-based application that helps farmers and agricultural experts detect diseases in plants using machine learning. The system takes an image of a plant leaf as input and identifies the disease by analyzing the image with a trained deep learning model.
+The **Plant Disease Detection System** is a web-based application that helps farmers and agricultural experts to detect diseases in plants using machine learning. The system takes an image of a plant leaf as input and identifies the disease by analyzing the image with a trained deep learning model.
 
 ## 🚀 Features
 - Upload an image of a plant leaf.
